@@ -9,7 +9,7 @@
 .gradle/
 gradlew
 gradlew.bat
-!gradle-wrapper.jar # Keep the wrapper JAR for consistent builds
+
 
 # IDE files
 .idea/
