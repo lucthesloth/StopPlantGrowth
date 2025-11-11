@@ -1,0 +1,28 @@
+#List of blocks that can be prevented from growing, examples:
+#WHEAT, CARROTS, POTATOES, BEETROOTS, NETHER_WART, SUGAR_CANE, CACTUS, MELON_STEM, PUMPKIN_STEM, BAMBOO,
+#KELP, SEA_PICKLE, VINE, TWISTING_VINES_PLANT, WEEPING_VINES_PLANT, KELP_PLANT
+prevented-blocks:
+  - WHEAT
+  - CARROTS
+  - POTATOES
+  - BEETROOTS
+  - NETHER_WART
+  - SUGAR_CANE
+  - CACTUS
+  - MELON_STEM
+  - PUMPKIN_STEM
+  - BAMBOO
+  - KELP
+  - SEA_PICKLE
+  - VINE
+  - TWISTING_VINES_PLANT
+  - WEEPING_VINES_PLANT
+  - KELP_PLANT
+
+#List of items that can be used to prevent growth when held in the player's main hand
+#SHEARS
+preventing-items:
+  - SHEARS
+
+#Message sent to the player when growth is prevented where the first %s is replaced with "prevented" or "allowed"
+prevention-message: "<white>This plant's growth has been %s</white>"

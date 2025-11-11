@@ -1,0 +1,48 @@
+# Build artifacts
+/build/
+/out/
+/target/
+*.jar
+*.war
+
+# Gradle files
+.gradle/
+gradlew
+gradlew.bat
+!gradle-wrapper.jar # Keep the wrapper JAR for consistent builds
+
+# IDE files
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+
+# Server specific files (if running a local server for testing)
+/run/
+/plugins/
+/logs/
+/cache/
+/world/
+/world_nether/
+/world_the_end/
+server.properties
+eula.txt
+bukkit.yml
+spigot.yml
+paper.yml
+commands.yml
+ops.json
+usercache.json
+banned-ips.json
+banned-players.json
+whitelist.json
+
+# Operating system specific files
+.DS_Store
+Thumbs.db
+
+# Other common exclusions
+*~
+*.bak
+*.swp

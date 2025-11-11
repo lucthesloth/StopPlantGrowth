@@ -1,0 +1,8 @@
+name: StopPlantGrowth
+version: '1.0-SNAPSHOT'
+main: pt.sloth.stopPlantGrowth.Main
+api-version: '1.21'
+
+commands:
+  stopplantgrowthreload:
+    aliases: [spgr]
