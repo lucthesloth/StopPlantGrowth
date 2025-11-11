@@ -1,0 +1,45 @@
+name: Gradle Build
+
+on:
+  push:
+    branches:
+      - master # Or your primary development branch
+  pull_request:
+    branches:
+      - master # Or your primary development branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Validate Gradle Wrapper
+        uses: gradle/wrapper-validation-action@v1
+
+      - name: Set up JDK
+        uses: actions/setup-java@v3
+        with:
+          java-version: '22' # Specify the JDK version required by your PaperMC plugin
+          distribution: 'temurin'
+          cache: 'gradle'
+
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+
+      - name: Build with Gradle
+        run: ./gradlew build # This will run the default build task
+      - name: Copy output file to artifact
+        run: |
+          find build/libs -type f -name "StopPlantGrowth*.jar" | while read fname; do
+          dirname=`dirname "$fname"`
+          filename=`basename "$fname"`
+          mkdir built/
+          cp "${dirname}/$filename" "built/$filename"
+          done
+      - name: Publish Artifact
+        uses: kittaakos/upload-artifact-as-is@v0
+        with:
+          path: built/
